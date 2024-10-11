@@ -7,12 +7,12 @@ impl Solution {
         let mut count_2 = HashMap::new();
 
         let mut max = 0;
-        for num in nums1 {
+        for &num in &nums1 {
             count_1.insert(num, count_1.get(&num).unwrap_or(&0) + 1);
             max = max.max(num);
         }
 
-        for num in nums2 {
+        for &num in &nums2 {
             count_2.insert(num, count_2.get(&num).unwrap_or(&0) + 1);
         }
 
