@@ -25,9 +25,9 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
+    use crate::tree::TreeNode;
     use std::cell::RefCell;
     use std::rc::Rc;
-    use crate::tree::TreeNode;
 
     #[test]
     fn test_rc_as_ref() {
@@ -43,8 +43,6 @@ mod tests {
         let x1 = option.unwrap();
 
         let x2 = x1.borrow();
-
-
     }
 
     #[test]

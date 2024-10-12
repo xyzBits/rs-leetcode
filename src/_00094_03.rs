@@ -11,7 +11,6 @@ impl Solution {
         let mut current = root;
 
         while current.is_some() || !work_list.is_empty() {
-
             // 遍历左子树
             while let Some(node) = current {
                 current = node.borrow_mut().left.take();
