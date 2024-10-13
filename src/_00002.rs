@@ -31,3 +31,23 @@ impl Solution {
         dummy.next
     }
 }
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test_1() {
+        let mut x = Some(2);
+
+        match x.as_mut() {
+            None => {}
+            Some(v) => *v = 42,
+        }
+
+        assert_eq!(x, Some(42));
+
+        let option = x.as_mut();
+        *option.unwrap() = 33;
+
+        assert_eq!(x, Some(33));
+    }
+}
