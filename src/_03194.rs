@@ -1,7 +1,7 @@
 use crate::Solution;
 
 impl Solution {
-    pub fn minimum_average(mut nums: Vec<i32>) -> f64 {
+    pub fn minimum_average(mut nums: &mut Vec<i32>) -> f64 {
         nums.sort();
 
         let len = nums.len();
@@ -22,10 +22,10 @@ mod tests {
     #[test]
     fn test() {
         assert_eq!(
-            Solution::minimum_average(vec![7, 8, 3, 4, 15, 13, 4, 1]),
+            Solution::minimum_average(&mut vec![7, 8, 3, 4, 15, 13, 4, 1]),
             5.5
         );
-        assert_eq!(Solution::minimum_average(vec![1, 9, 8, 3, 10, 5]), 5.5);
-        assert_eq!(Solution::minimum_average(vec![1, 2, 3, 7, 8, 9]), 5.0);
+        assert_eq!(Solution::minimum_average(&mut vec![1, 9, 8, 3, 10, 5]), 5.5);
+        assert_eq!(Solution::minimum_average(&mut vec![1, 2, 3, 7, 8, 9]), 5.0);
     }
 }
