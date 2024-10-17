@@ -7,19 +7,19 @@ impl Solution {
     pub fn inorder_traversal_1(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         let mut ans = vec![];
 
-        Self::dfs(&root, &mut ans);
+        Self::dfs_(&root, &mut ans);
         ans
     }
 
-    fn dfs(root: &Option<Rc<RefCell<TreeNode>>>, ans: &mut Vec<i32>) {
+    fn dfs_(root: &Option<Rc<RefCell<TreeNode>>>, ans: &mut Vec<i32>) {
         if root.is_none() {
             return;
         }
 
         let node = root.as_ref().unwrap().borrow();
-        Self::dfs(&node.left, ans);
+        Self::dfs_(&node.left, ans);
         ans.push(node.val);
-        Self::dfs(&node.right, ans);
+        Self::dfs_(&node.right, ans);
     }
 }
 
