@@ -1,7 +1,7 @@
 use crate::Solution;
 
 impl Solution {
-    pub fn min_operations(mut nums: Vec<i32>) -> i32 {
+    pub fn min_operations_(mut nums: Vec<i32>) -> i32 {
         let len = nums.len();
         let mut ans = 0;
 

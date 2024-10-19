@@ -28,27 +28,37 @@ impl Solution {
     }
 }
 
-
 #[cfg(test)]
 mod tests {
     use crate::Solution;
 
     #[test]
     fn test() {
-        assert_eq!(Solution::can_make_square(
-            vec![vec!['B', 'W', 'B'], vec!['B', 'W', 'W'], vec!['B', 'W', 'B']]),
-                   true
+        assert_eq!(
+            Solution::can_make_square(vec![
+                vec!['B', 'W', 'B'],
+                vec!['B', 'W', 'W'],
+                vec!['B', 'W', 'B']
+            ]),
+            true
         );
 
-
-        assert_eq!(Solution::can_make_square(
-            vec![vec!['B', 'W', 'B'], vec!['W', 'B', 'W'], vec!['B', 'W', 'B']]),
-                   false
+        assert_eq!(
+            Solution::can_make_square(vec![
+                vec!['B', 'W', 'B'],
+                vec!['W', 'B', 'W'],
+                vec!['B', 'W', 'B']
+            ]),
+            false
         );
 
-        assert_eq!(Solution::can_make_square(
-            vec![vec!['B', 'W', 'B'], vec!['B', 'W', 'W'], vec!['B', 'W', 'W']]),
-                   true
+        assert_eq!(
+            Solution::can_make_square(vec![
+                vec!['B', 'W', 'B'],
+                vec!['B', 'W', 'W'],
+                vec!['B', 'W', 'W']
+            ]),
+            true
         );
     }
 }
