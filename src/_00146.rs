@@ -69,6 +69,7 @@ impl<T> LinkedList<T> {
         // take 方法见 push_back 方法中的注释
         // 因为 pop_back 方法有返回值，采用 Option::map 的方式
         // 比较自然，如果 self.tail 是 None 就直接返回 None
+        // tail 的所有权还在，但是 Option 中的值成为 None 了
         self.tail.take().map(|node| {
             // 判断最后一个节点有没有 prev 节点，
             // 如果有则断开，如果没有则把 self.tail self.head 一起变成 none
@@ -97,7 +98,10 @@ impl<T> LinkedList<T> {
 
     pub fn peek_back(&self) -> Option<Ref<T>> {
         self.tail.as_ref().map(|node| {
-            // 由于 node.borrow()
+            // 由于 node.borrow() 返回的是 Ref<Node<T>
+            // 如果 peek_back 直接返回 Ref<Node<T>>，则把内部的细节 Node 类型
+            // 暴露给用户，所以需要把内部细节屏蔽掉
+            // 使用 Ref::map 可以把内部字段映射出来
             Ref::map(node.borrow(), |node| &node.ele)
         })
     }
@@ -129,7 +133,7 @@ impl LRUCache {
 
 #[cfg(test)]
 mod tests {
-    use std::cell::RefCell;
+    use std::cell::{Ref, RefCell};
     use std::rc::Rc;
 
     #[test]
@@ -215,5 +219,30 @@ mod tests {
 
         let data = result.ok().unwrap();
         println!("{}", data);
+    }
+
+    #[test]
+    fn test_ref_map() {
+        let input = RefCell::new((5, 'b'));
+        let b1 = input.borrow();
+        let b2 = Ref::map(b1, |t| &t.0);
+
+
+        assert_eq!(*b2, 5);
+    }
+
+    #[test]
+    fn test_ref() {
+        let input = RefCell::new(vec![1, 2, 3]);
+        // let input_ref = input.borrow();
+        //
+        // println!("{:?}", input_ref);
+
+        let mut mut_ref_input = input.borrow_mut();
+        mut_ref_input.push(4);
+
+        println!("{:?}", mut_ref_input);
+
+        println!("{:?}", input);
     }
 }
