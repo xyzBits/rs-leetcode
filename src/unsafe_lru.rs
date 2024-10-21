@@ -11,7 +11,6 @@ pub struct Node<T> {
     ele: T,
     prev: *const Node<T>,
     next: *const Node<T>,
-
 }
 
 impl<T> Node<T> {
@@ -39,9 +38,7 @@ mod tests {
         node1.next = &node2 as *const Node<i32>;
         node2.prev = &node1 as *const Node<i32>;
 
-        let node = unsafe {
-            &*node1.next
-        };
+        let node = unsafe { &*node1.next };
 
         let node3 = Box::new(Node::new(3));
 

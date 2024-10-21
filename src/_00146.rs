@@ -227,7 +227,6 @@ mod tests {
         let b1 = input.borrow();
         let b2 = Ref::map(b1, |t| &t.0);
 
-
         assert_eq!(*b2, 5);
     }
 
