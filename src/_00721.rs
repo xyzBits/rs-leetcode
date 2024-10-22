@@ -14,15 +14,19 @@ impl Solution {
         let mut ans = Vec::new();
         let mut visited = vec![false; accounts.len()];
 
-
         for i in 0..accounts.len() {
             if visited[i] {
                 continue;
             }
 
-
             let mut email_set = HashSet::new();
-            Self::dfs_helper(i, &accounts, &mut email_to_idx, &mut email_set, &mut visited);
+            Self::dfs_helper(
+                i,
+                &accounts,
+                &mut email_to_idx,
+                &mut email_set,
+                &mut visited,
+            );
             let mut curr = email_set.into_iter().collect::<Vec<String>>();
             curr.sort();
             curr.insert(0, accounts[i][0].clone());
@@ -56,4 +60,3 @@ impl Solution {
         }
     }
 }
-
