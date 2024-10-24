@@ -23,11 +23,9 @@ impl Solution {
             i = j;
         }
 
-
         last_i as i32
     }
 }
-
 
 #[cfg(test)]
 mod tests {

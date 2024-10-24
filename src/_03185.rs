@@ -10,7 +10,6 @@ impl Solution {
             cnt[(hour % 24) as usize] += 1;
         }
 
-
         ans
     }
 }
