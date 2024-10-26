@@ -33,11 +33,16 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
+    use std::time::UNIX_EPOCH;
     use crate::Solution;
 
     #[test]
     fn it_works() {
         assert_eq!(Solution::remove_element(&mut vec![3, 2, 2, 3], 3), 2);
         assert_eq!(Solution::remove_element(&mut vec![0, 1, 2, 2, 3, 0, 4, 2], 2), 5);
+
+        let time = std::time::SystemTime::now().duration_since(UNIX_EPOCH).expect("error");
+
+        println!("{:?}", time.as_millis());
     }
 }

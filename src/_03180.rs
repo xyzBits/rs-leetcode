@@ -1,7 +1,7 @@
 use crate::Solution;
 
 impl Solution {
-    pub fn max_total_reward(mut reward_values: Vec<i32>) -> i32 {
+    pub fn max_total_reward_(mut reward_values: Vec<i32>) -> i32 {
         reward_values.sort();
 
         let m = reward_values[reward_values.len() - 1];
@@ -35,7 +35,7 @@ mod tests {
 
     #[test]
     fn test_max_total_reward() {
-        assert_eq!(Solution::max_total_reward(vec![1, 1, 3, 3]), 4);
-        assert_eq!(Solution::max_total_reward(vec![1, 6, 4, 3, 2]), 11);
+        assert_eq!(Solution::max_total_reward_(vec![1, 1, 3, 3]), 4);
+        assert_eq!(Solution::max_total_reward_(vec![1, 6, 4, 3, 2]), 11);
     }
 }
