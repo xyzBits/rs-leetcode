@@ -1,6 +1,5 @@
 use crate::Solution;
 
-
 impl Solution {
     pub fn max_total_reward(reward_values: Vec<i32>) -> i32 {
         let mut reward_values = reward_values;
@@ -20,7 +19,6 @@ impl Solution {
     }
 }
 
-
 #[cfg(test)]
 mod tests {
     use crate::Solution;
@@ -31,6 +29,5 @@ mod tests {
             assert_eq!(Solution::max_total_reward(vec![1, 1, 3, 3]), 4);
             assert_eq!(Solution::max_total_reward(vec![1, 6, 4, 3, 2]), 11);
         }
-
     }
 }
