@@ -1,7 +1,7 @@
 use crate::Solution;
 
 impl Solution {
-    pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
+    pub fn remove_duplicates_(nums: &mut Vec<i32>) -> i32 {
         let len = nums.len();
 
         if len == 0 {
