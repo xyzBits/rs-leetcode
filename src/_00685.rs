@@ -33,7 +33,7 @@ impl UnionFind {
 }
 
 impl Solution {
-    pub fn find_redundant_directed_connection(edges: Vec<Vec<i32>>) -> Vec<i32> {
+    pub fn find_redundant_directed_connection_(edges: Vec<Vec<i32>>) -> Vec<i32> {
         let n = edges.len();
         let mut co: HashSet<i32> = (1..n as i32 + 1).collect();
         for i in edges.iter() {
@@ -95,12 +95,12 @@ mod tests {
     #[test]
     fn test_find_redundant_connection() {
         assert_eq!(
-            Solution::find_redundant_directed_connection(vec![vec![1, 2], vec![1, 3], vec![2, 3]]),
+            Solution::find_redundant_directed_connection_(vec![vec![1, 2], vec![1, 3], vec![2, 3]]),
             vec![2, 3]
         );
 
         assert_eq!(
-            Solution::find_redundant_directed_connection(vec![
+            Solution::find_redundant_directed_connection_(vec![
                 vec![1, 2],
                 vec![2, 3],
                 vec![3, 4],
