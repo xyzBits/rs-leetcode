@@ -21,7 +21,7 @@ impl Solution {
         }
         let mut dp = vec![vec![-1; max_cnt as usize + 1]; n as usize];
 
-        Self::inner_dfs(
+        Self::inner_dfs_3193(
             n as usize - 1,
             *req_map.get(&(n - 1)).unwrap() as usize,
             &req_map,
@@ -29,7 +29,7 @@ impl Solution {
         ) as i32
     }
 
-    fn inner_dfs(
+    fn inner_dfs_3193(
         end: usize,
         cnt: usize,
         req_map: &HashMap<i32, i32>,
@@ -43,14 +43,14 @@ impl Solution {
         }
         if let Some(&r) = req_map.get(&(end as i32 - 1)) {
             if r as usize <= cnt && cnt <= end + r as usize {
-                dp[end][cnt] = Self::inner_dfs(end - 1, r as usize, req_map, dp);
+                dp[end][cnt] = Self::inner_dfs_3193(end - 1, r as usize, req_map, dp);
                 return dp[end][cnt];
             }
             return 0;
         }
         let mut tot_sum = 0;
         for i in 0..=cnt.min(end) {
-            tot_sum = (tot_sum + Self::inner_dfs(end - 1, cnt - i, req_map, dp)) % MOD;
+            tot_sum = (tot_sum + Self::inner_dfs_3193(end - 1, cnt - i, req_map, dp)) % MOD;
         }
         dp[end][cnt] = tot_sum;
         tot_sum
