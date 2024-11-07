@@ -1,7 +1,7 @@
 use crate::Solution;
 
 impl Solution {
-    pub fn results_array(nums: Vec<i32>, k: i32) -> Vec<i32> {
+    pub fn results_array_(nums: Vec<i32>, k: i32) -> Vec<i32> {
         let n = nums.len();
         let mut ans = vec![-1; n - k as usize + 1];
 
@@ -28,17 +28,17 @@ mod tests {
     #[test]
     fn test_results_array() {
         assert_eq!(
-            Solution::results_array(vec![1, 2, 3, 4, 3, 2, 5], 3),
+            Solution::results_array_(vec![1, 2, 3, 4, 3, 2, 5], 3),
             vec![3, 4, -1, -1, -1]
         );
 
         assert_eq!(
-            Solution::results_array(vec![2, 2, 2, 2, 2], 4),
+            Solution::results_array_(vec![2, 2, 2, 2, 2], 4),
             vec![-1, -1]
         );
 
         assert_eq!(
-            Solution::results_array(vec![3, 2, 3, 2, 3, 2], 2),
+            Solution::results_array_(vec![3, 2, 3, 2, 3, 2], 2),
             vec![-1, 3, -1, 3, -1]
         );
     }
