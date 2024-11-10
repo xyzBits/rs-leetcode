@@ -15,7 +15,6 @@ impl NeighborSum {
         let mut pos = HashMap::new();
         for i in 0..grid.len() {
             for j in 0..grid[0].len() {
-
                 // grid[i][j] 可以 copy
                 pos.insert(grid[i][j], (i, j));
             }
@@ -38,7 +37,11 @@ impl NeighborSum {
             for &(dx, dy) in DIRS[idx] {
                 let nx = x as i32 + dx;
                 let ny = y as i32 + dy;
-                if nx >= 0 && (nx as usize) < self.grid.len() && ny >= 0 && (ny as usize) < self.grid[0].len() {
+                if nx >= 0
+                    && (nx as usize) < self.grid.len()
+                    && ny >= 0
+                    && (ny as usize) < self.grid[0].len()
+                {
                     sum += self.grid[nx as usize][ny as usize];
                 }
             }
