@@ -1,7 +1,7 @@
 use crate::Solution;
 
 impl Solution {
-    pub fn min_flips(grid: Vec<Vec<i32>>) -> i32 {
+    pub fn min_flips_(grid: Vec<Vec<i32>>) -> i32 {
         let mut row_cnt = 0;
         let mut col_cnt = 0;
 
