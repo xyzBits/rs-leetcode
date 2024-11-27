@@ -1,7 +1,7 @@
 use crate::Solution;
 
 impl Solution {
-    pub fn number_of_alternating_groups(colors: Vec<i32>) -> i32 {
+    pub fn number_of_alternating_groups_(colors: Vec<i32>) -> i32 {
         let n = colors.len();
         let mut ans = 0;
 
