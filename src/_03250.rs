@@ -1,7 +1,7 @@
 use crate::Solution;
 
 impl Solution {
-    pub fn count_of_pairs(nums: Vec<i32>) -> i32 {
+    pub fn count_of_pairs_(nums: Vec<i32>) -> i32 {
         let n = nums.len();
         let mut dp = vec![vec![0; 51]; n];
         let mod_num = 1000000007;
