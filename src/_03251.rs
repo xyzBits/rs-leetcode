@@ -7,9 +7,10 @@ impl Solution {
 
         let mod_num = 1000000007;
 
-        for &x in &nums {
-            m = m.max(x);
-        }
+        // for &x in &nums {
+        //     m = m.max(x);
+        // }
+        m = *nums.iter().max().unwrap();
 
         let mut dp = vec![vec![0; (m + 1) as usize]; n];
 
