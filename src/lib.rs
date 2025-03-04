@@ -84,5 +84,6 @@ mod _3192;
 mod list;
 mod tree;
 mod unsafe_lru;
+mod _01745;
 
 pub struct Solution;
