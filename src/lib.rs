@@ -88,5 +88,6 @@ mod _01745;
 mod _01328;
 mod _02588;
 mod _02597;
+mod _02234;
 
 pub struct Solution;
