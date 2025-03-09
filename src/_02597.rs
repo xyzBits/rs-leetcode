@@ -66,9 +66,7 @@ fn test_01() {
     // 若不存在则插入默认值
     map.entry("banana").and_modify(|v| *v += 1).or_insert(98);
     println!("{:?}", map);
-
 }
-
 
 #[test]
 fn test_02() {
@@ -86,13 +84,12 @@ fn test_02() {
         println!("{}: {}", key, value);
     }
 
-
-    let transformed = map.iter()
+    let transformed = map
+        .iter()
         .map(|(k, &v)| (k.to_uppercase(), v * 2))
         .collect::<HashMap<_, _>>();
 
     println!("{:?}", transformed);
-
 }
 
 #[test]

@@ -54,13 +54,10 @@ impl Solution {
     }
 }
 
-
 #[test]
 fn test_01() {
-    let mut numbers = vec![5, 3, 7, 1, 3,];
+    let mut numbers = vec![5, 3, 7, 1, 3];
     numbers.sort_by(|a, b| a.cmp(b));
     numbers.reverse();
     println!("{:?}", numbers);
-
-
 }
