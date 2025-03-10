@@ -1,7 +1,7 @@
 use crate::Solution;
 
 impl Solution {
-    pub fn maximum_beauty(mut items: Vec<Vec<i32>>, queries: Vec<i32>) -> Vec<i32> {
+    pub fn maximum_beauty_2070(mut items: Vec<Vec<i32>>, queries: Vec<i32>) -> Vec<i32> {
         items.sort_by(|a, b| a[0].cmp(&b[0]));
         let n = items.len();
 
