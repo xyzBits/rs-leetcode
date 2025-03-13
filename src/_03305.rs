@@ -2,7 +2,7 @@ use crate::Solution;
 use std::collections::HashSet;
 
 impl Solution {
-    pub fn count_of_substrings(word: String, k: i32) -> i32 {
+    pub fn count_of_substrings_3305(word: String, k: i32) -> i32 {
         let mut vowels = HashSet::new();
         vowels.insert('a');
         vowels.insert('e');
