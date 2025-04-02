@@ -113,5 +113,6 @@ mod list;
 mod tree;
 mod unsafe_lru;
 mod _2140;
+mod _02873;
 
 pub struct Solution;
