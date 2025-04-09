@@ -13,7 +13,7 @@ impl Solution {
         operation
     }
 
-    pub fn min_operations(nums: Vec<i32>) -> i32 {
+    pub fn min_operations_3192(nums: Vec<i32>) -> i32 {
         let mut operation = 0;
 
         for i in (0..nums.len() - 1).step_by(1).rev() {
