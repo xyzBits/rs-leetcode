@@ -13,7 +13,6 @@ impl Solution {
             }
         }
 
-
         set.len() as i32
     }
 }
