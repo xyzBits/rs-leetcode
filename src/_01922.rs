@@ -21,5 +21,3 @@ impl Solution {
         ret
     }
 }
-
-
