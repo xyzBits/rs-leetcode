@@ -1,7 +1,7 @@
 use crate::Solution;
 
 impl Solution {
-    pub fn min_operations_(mut nums: Vec<i32>) -> i32 {
+    pub fn min_operations_3191(mut nums: Vec<i32>) -> i32 {
         let len = nums.len();
         let mut ans = 0;
 
@@ -28,7 +28,7 @@ mod tests {
 
     #[test]
     fn test() {
-        assert_eq!(Solution::min_operations(vec![0, 1, 1, 1, 0, 0]), 3);
-        assert_eq!(Solution::min_operations(vec![0, 1, 1, 1]), -1);
+        assert_eq!(Solution::min_operations_3191(vec![0, 1, 1, 1, 0, 0]), 3);
+        assert_eq!(Solution::min_operations_3191(vec![0, 1, 1, 1]), -1);
     }
 }

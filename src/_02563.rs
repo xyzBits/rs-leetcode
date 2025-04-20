@@ -2,6 +2,8 @@ use crate::Solution;
 
 impl Solution {
     pub fn count_fair_pairs(mut nums: Vec<i32>, lower: i32, upper: i32) -> i64 {
+        // 保持相等元素的相对顺序
+        // sort_unstable 不保持相等元素的相对顺序
         nums.sort();
 
         let mut ans = 0_i64;

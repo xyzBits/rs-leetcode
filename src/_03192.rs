@@ -36,7 +36,7 @@ mod tests {
 
     #[test]
     fn test() {
-        assert_eq!(Solution::min_operations(vec![0, 1, 1, 0, 1]), 4);
-        assert_eq!(Solution::min_operations(vec![1, 0, 0, 0]), 1);
+        assert_eq!(Solution::min_operations_3192(vec![0, 1, 1, 0, 1]), 4);
+        assert_eq!(Solution::min_operations_3192(vec![1, 0, 0, 0]), 1);
     }
 }
