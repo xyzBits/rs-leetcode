@@ -1,7 +1,7 @@
 use crate::Solution;
 
 impl Solution {
-    pub fn count_subarrays(nums: Vec<i32>, k: i64) -> i64 {
+    pub fn count_subarrays_2303(nums: Vec<i32>, k: i64) -> i64 {
         let n = nums.len();
         let mut res = 0_i64;
         let mut total = 0_i64;
