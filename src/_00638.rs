@@ -15,7 +15,7 @@ impl Solution {
         // 2.
         let n = price.len();
         for vals in special.iter() {
-            if !Self::check(price, vals, needs) {
+            if !Self::check_638(price, vals, needs) {
                 continue;
             }
 
@@ -35,7 +35,7 @@ impl Solution {
     }
 
     // 大礼包中的物品数量必须 <= needs中的数量，并且大礼包的价格必须 < 单独买的价格
-    fn check(price: &Vec<i32>, counts: &Vec<i32>, needs: &Vec<i32>) -> bool {
+    fn check_638(price: &Vec<i32>, counts: &Vec<i32>, needs: &Vec<i32>) -> bool {
         let n = price.len();
         let mut sum = 0;
 
