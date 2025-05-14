@@ -1,7 +1,7 @@
 use crate::Solution;
 
 impl Solution {
-    pub fn length_after_transformations(s: String, t: i32) -> i32 {
+    pub fn length_after_transformations_(s: String, t: i32) -> i32 {
         const MOD: i64 = 1000000007;
         let mut cnt = vec![0; 26];
         for &ch in s.as_bytes() {
