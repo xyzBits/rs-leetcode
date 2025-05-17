@@ -1,7 +1,7 @@
 use crate::Solution;
 
 impl Solution {
-    pub fn get_longest_subsequence(words: Vec<String>, groups: Vec<i32>) -> Vec<String> {
+    pub fn get_longest_subsequence_(words: Vec<String>, groups: Vec<i32>) -> Vec<String> {
         let n = words.len();
         let mut dp = vec![1; n];
         let mut prev = vec![-1; n];
