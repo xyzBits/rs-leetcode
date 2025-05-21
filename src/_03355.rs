@@ -1,7 +1,7 @@
 use crate::Solution;
 
 impl Solution {
-    pub fn is_zero_array(num: Vec<i32>, queries: Vec<Vec<i32>>) -> bool {
+    pub fn is_zero_array_3355(num: Vec<i32>, queries: Vec<Vec<i32>>) -> bool {
         let mut delta_array = vec![0; num.len() + 1];
 
         for query in &queries {
