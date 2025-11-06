@@ -16,7 +16,13 @@ fn test_002() {
     println!("{}", len);
 }
 
+// 变量 s 本身不可变，也就是他的指向不能变，但是他指向的数据可以变
 fn change(s: &mut String) {
+    s.push_str(" World");
+}
+
+// 变量 s 本身指向的数据也可以变
+fn change_v2(mut s: &mut String) {
     s.push_str(" World");
 }
 
