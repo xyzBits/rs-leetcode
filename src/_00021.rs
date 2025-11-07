@@ -1,6 +1,7 @@
-use std::rc::Rc;
 use crate::list::ListNode;
 use crate::Solution;
+use std::cell::{Cell, RefCell};
+use std::rc::Rc;
 
 impl Solution {
     pub fn merge_two_lists_v2(
@@ -47,8 +48,51 @@ impl Solution {
     }
 }
 
+struct ServiceTracker {
+    requests: Cell<i32>,
+}
+
+impl ServiceTracker {
+    pub fn record_access(&self) {
+        let current_count = self.requests.get(); // 取出值
+        self.requests.set(current_count + 1); // 使用 set 修改内部数据
+    }
+}
 
 #[test]
 fn test_001() {
-    let mut rc = Rc::new(Box::new(5));
+    let tracker = ServiceTracker {
+        requests: Cell::new(0),
+    };
+
+    tracker.record_access();
+    tracker.record_access();
+
+    println!("total access count {:?}", tracker.requests.get());
+}
+
+struct Logger {
+    history: RefCell<Vec<String>>,
+}
+
+impl Logger {
+    pub fn log_message(&self, msg: &str) {
+        self.history.borrow_mut().push(msg.to_string());
+    }
+
+    pub fn get_history(&self) -> String {
+        self.history.borrow().join(", ")
+    }
+}
+
+#[test]
+fn test_002() {
+    let app_logger = Logger {
+        history: RefCell::new(vec![]),
+    };
+
+    app_logger.log_message("Event A");
+    app_logger.log_message("Event B");
+
+    println!("log: {}", app_logger.get_history());
 }
