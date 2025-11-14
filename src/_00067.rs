@@ -41,7 +41,6 @@ impl Solution {
     }
 }
 
-
 #[test]
 fn test_001() {
     let mut a = String::from("101");

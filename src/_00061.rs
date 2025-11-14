@@ -27,22 +27,20 @@ struct Point {
     y: i32,
 }
 
-
 #[test]
 fn test_001() {
     // 模式 就是 形状
-    let msg = Message::Move {x: 1, y: 2};
+    let msg = Message::Move { x: 1, y: 2 };
 
     match msg {
         Message::Quit => println!("Quit"),
         Message::Move { x, y } => {
             println!("Move to x: {}, y: {}", x, y);
-        },
+        }
         Message::Write(s) => {
             println!("Write to string: {}", s);
         }
     }
-
 
     let score = 85;
 
@@ -53,20 +51,17 @@ fn test_001() {
         _ => println!("some good score"),
     };
 
-
     let config_value = Some(30);
     if let Some(x) = config_value {
         println!("found config value: {}", x);
-    }// 忽略 None 值，代码不会进入 if
-
+    } // 忽略 None 值，代码不会进入 if
 
     let coords = (10, -5);
     // 解构元组
     let (x, y) = coords;
     println!("x: {}, y: {}", x, y);
 
-
-    let p = Point {x: 200, y: 300};
-    let Point {y, ..} = p;
+    let p = Point { x: 200, y: 300 };
+    let Point { y, .. } = p;
     println!("only need y = {}", y);
 }
