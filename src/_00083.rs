@@ -21,7 +21,6 @@ impl Solution {
     }
 }
 
-
 fn print_vec(data: Box<Vec<String>>) {
     println!("{:?}", data);
 }
