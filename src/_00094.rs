@@ -4,53 +4,49 @@ use std::cell::RefCell;
 use std::rc::Rc;
 
 impl Solution {
-    pub fn inorder_traversal_1(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-        let mut ans = vec![];
+    pub fn inorder_traversal_v1(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+        let mut res = vec![];
+        Self::inorder(root, &mut res);
 
-        Self::dfs_(&root, &mut ans);
-        ans
+        res
     }
 
-    fn dfs_(root: &Option<Rc<RefCell<TreeNode>>>, ans: &mut Vec<i32>) {
+    fn inorder(root: Option<Rc<RefCell<TreeNode>>>, res: &mut Vec<i32>) {
         if root.is_none() {
             return;
         }
 
-        let node = root.as_ref().unwrap().borrow();
-        Self::dfs_(&node.left, ans);
-        ans.push(node.val);
-        Self::dfs_(&node.right, ans);
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use crate::tree::TreeNode;
-    use std::cell::RefCell;
-    use std::rc::Rc;
-
-    #[test]
-    fn test_rc_as_ref() {
-        let rc = Rc::new(1);
-        let x = rc.as_ref();
-
-        let root = Rc::new(RefCell::new(TreeNode::new(1)));
-
-        let root = Some(root);
-
-        let option = root.as_ref();
-
-        let x1 = option.unwrap();
-
-        let x2 = x1.borrow();
+        let root_node = root.as_ref().unwrap().borrow();
+        Self::inorder(root_node.left.clone(), res);
+        res.push(root_node.val);
+        Self::inorder(root_node.right.clone(), res);
     }
 
-    #[test]
-    fn test_1() {
-        let root = Rc::new(RefCell::new(TreeNode::new(1)));
+    pub fn inorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+        let mut result = Vec::new();
 
-        let root = Some(root);
-        let x = root.as_ref().unwrap().borrow();
-        let x1 = &x;
+        let mut stack = Vec::new();
+
+        let mut current = root;
+
+        // 当前节点不为空，或者栈不为空
+        while current.is_some() || !stack.is_empty() {
+            // 1. 向左探索到底，不断将节点压入栈，并走向左子节点
+            while let Some(node) = current {
+                // current 的所有权必须保留给 stack，所以要使用 clone
+                stack.push(node.clone());
+
+                current = node.borrow().left.clone();
+            }
+
+            if let Some(node) = stack.pop() {
+                let node_ref = node.borrow();
+                result.push(node_ref.val);
+
+                current = node_ref.right.clone();
+            }
+        }
+
+        result
     }
 }
