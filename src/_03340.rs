@@ -1,7 +1,7 @@
 use crate::Solution;
 
 impl Solution {
-    pub fn is_balanced(num: String) -> bool {
+    pub fn is_balanced_(num: String) -> bool {
         let (mut diff, mut sign) = (0, 1);
 
         for c in num.chars() {

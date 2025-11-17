@@ -25,3 +25,14 @@ impl Solution {
         Some(Rc::new(RefCell::new(root)))
     }
 }
+
+/// Box::new() 创建一个独占的，堆分配的节点
+/// Rc::new(T) 创建共享所有权的根节点
+/// .clone() 核心API，复制智能指针，增加引用计数，用于递归或者将子节点传递给多个所有者
+/// * Deref 访问智能指针内部的数据  
+///
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test_sorted_array_to_bst() {}
+}
