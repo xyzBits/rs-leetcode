@@ -26,6 +26,7 @@ mod _00104;
 mod _00108;
 mod _00110;
 mod _00111;
+mod _00112;
 mod _00146;
 mod _00169;
 mod _00189;
@@ -186,5 +187,6 @@ mod ch_4;
 mod list;
 mod tree;
 mod unsafe_lru;
+mod _00118;
 
 pub struct Solution;
