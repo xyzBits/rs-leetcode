@@ -1,6 +1,5 @@
 use crate::list::ListNode;
 use crate::Solution;
-use std::collections::BinaryHeap;
 
 impl Solution {
     pub fn remove_elements(head: Option<Box<ListNode>>, val: i32) -> Option<Box<ListNode>> {
