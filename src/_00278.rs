@@ -1,7 +1,9 @@
 use crate::Solution;
 
 impl Solution {
-    fn is_bad_version(n: i32) -> bool { true }
+    fn is_bad_version(n: i32) -> bool {
+        true
+    }
     pub fn first_bad_version(&self, n: i32) -> i32 {
         let (mut left, mut right) = (1, n);
 
