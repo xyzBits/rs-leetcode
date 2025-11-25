@@ -22,23 +22,29 @@ impl Solution {
 
     pub fn first_uniq_char(s: String) -> i32 {
         let mut position = HashMap::new();
-        let n = s.len();
-        for ch in s.chars() {
-            if let None = position.get(&ch) {
-                position.insert(ch, -1);
-            } else {
-                position.insert(ch, 1);
+        let n = s.len() as i32;
+
+        for (i, ch) in s.char_indices() {
+            let i_i32 = i as i32;
+            match position.entry(ch) {
+                std::collections::hash_map::Entry::Occupied(mut entry) => {
+                    entry.insert(-1);
+                }
+                std::collections::hash_map::Entry::Vacant(entry) => {
+                    entry.insert(i_i32);
+                }
             }
         }
 
-        let mut first = n as i32;
-        for (key, value) in position {
-            if value != -1 && value < first {
-                first = value;
+        let mut first = n;
+        for pos in position.values() {
+            let pos = *pos;
+            if pos != -1 && pos < first {
+                first = pos;
             }
         }
 
-        if first == n as i32 {
+        if first == n {
             first = -1;
         }
 
