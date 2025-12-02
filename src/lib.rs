@@ -247,5 +247,6 @@ mod _00485;
 mod _00492;
 mod _00495;
 mod _00496;
+mod _00500;
 
 pub struct Solution;
