@@ -250,5 +250,6 @@ mod _00496;
 mod _00500;
 mod _00501;
 mod _00504;
+mod _00506;
 
 pub struct Solution;
