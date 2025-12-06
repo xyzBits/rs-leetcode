@@ -26,7 +26,6 @@ fn test_001() {
     let mut data = vec![1, 2, 3, 4, 5];
     data[1..3].reverse();
     println!("{:?}", data);
-
 }
 
 #[test]
@@ -45,7 +44,6 @@ fn test_002() {
     assert_eq!(Some('e'), chars.next());
     assert_eq!(None, chars.next());
 }
-
 
 #[test]
 fn test_003() {

@@ -1,7 +1,6 @@
 use crate::tree::TreeNode;
 use crate::Solution;
 use std::cell::RefCell;
-use std::option;
 use std::rc::Rc;
 
 impl Solution {
