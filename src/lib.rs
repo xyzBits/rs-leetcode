@@ -262,5 +262,6 @@ mod ch_4;
 mod list;
 mod tree;
 mod unsafe_lru;
+mod _00566;
 
 pub struct Solution;
