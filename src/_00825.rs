@@ -1,5 +1,4 @@
 use crate::Solution;
-use std::env::args;
 
 impl Solution {
     pub fn num_friend_requests(mut ages: Vec<i32>) -> i32 {

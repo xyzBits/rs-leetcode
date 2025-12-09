@@ -113,6 +113,7 @@ mod _00557;
 mod _00560;
 mod _00561;
 mod _00563;
+mod _00566;
 mod _00632;
 mod _00633;
 mod _00638;
@@ -262,6 +263,5 @@ mod ch_4;
 mod list;
 mod tree;
 mod unsafe_lru;
-mod _00566;
 
 pub struct Solution;

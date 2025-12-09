@@ -1,7 +1,6 @@
 use crate::list::ListNode;
 use crate::Solution;
 use std::cell::{Cell, RefCell};
-use std::rc::Rc;
 
 impl Solution {
     pub fn merge_two_lists_v2(
