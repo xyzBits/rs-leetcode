@@ -77,12 +77,11 @@ fn test_matrix_reshape() {
     print_matrix_aligned(&matrix);
 }
 
-
 use std::f64::consts::PI;
 
 fn plot_sin_x_horizontal() {
     // 1. 定义画布参数
-    let width = 80;  // 终端绘图区域的宽度 (x 轴)
+    let width = 80; // 终端绘图区域的宽度 (x 轴)
     let height = 20; // 终端绘图区域的高度 (y 轴)
 
     // Y 轴的中心线（约第 10 行）
@@ -126,7 +125,11 @@ fn plot_sin_x_horizontal() {
     }
 
     // 4. 打印画布
-    println!("\n--- 绘制 sin(x) 水平图表 ({rows}x{cols}) ---", rows=height, cols=width);
+    println!(
+        "\n--- 绘制 sin(x) 水平图表 ({rows}x{cols}) ---",
+        rows = height,
+        cols = width
+    );
 
     // 打印上边界
     println!(" {}", "═".repeat(width + 2));
@@ -145,4 +148,3 @@ fn plot_sin_x_horizontal() {
 fn test_plot_sin_x() {
     plot_sin_x_horizontal();
 }
-
