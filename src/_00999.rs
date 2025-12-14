@@ -21,7 +21,7 @@ impl Solution {
             loop {
                 let tx = start + step * dx[i] as usize;
                 let ty = end + step * dy[i] as usize;
-                if tx < 0 || tx >= 8 || ty < 0 || ty >= 8 || board[tx][ty] == 'B' {
+                if tx >= 8 || ty >= 8 || board[tx][ty] == 'B' {
                     break;
                 }
 

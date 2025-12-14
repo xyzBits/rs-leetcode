@@ -1,3 +1,7 @@
+#![allow(dead_code)]
+#![allow(unused_imports)]
+#![allow(unused_variables)]
+#![allow(unused_assignments)]
 mod _00001;
 mod _00002;
 mod _00009;
@@ -132,10 +136,15 @@ mod _00653;
 mod _00657;
 mod _00661;
 mod _00671;
+mod _00674;
+mod _00680;
+mod _00682;
 mod _00684;
 mod _00685;
 mod _00685_1;
 mod _00688;
+mod _00693;
+mod _00696;
 mod _00721;
 mod _00743;
 mod _00781;

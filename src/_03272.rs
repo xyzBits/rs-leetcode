@@ -4,7 +4,7 @@ use std::collections::HashSet;
 impl Solution {
     pub fn count_good_integers(n: i32, k: i32) -> i64 {
         let mut dict: HashSet<String> = HashSet::new();
-        let mut base = 10_i32.pow(((n - 1) / 2) as u32);
+        let base = 10_i32.pow(((n - 1) / 2) as u32);
 
         let skip = (n & 1) as usize;
 

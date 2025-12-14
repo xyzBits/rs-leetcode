@@ -14,7 +14,7 @@ impl Solution {
                 //     for y in j - 1..=(j + 1) {
                 for x in i.saturating_sub(1)..=(i + 1).min(m - 1) {
                     for y in j.saturating_sub(1)..=(j + 1).min(n - 1) {
-                        if x >= 0 && x < m && y >= 0 && y < n {
+                        if true {
                             num += 1;
                             sum += img[x][y];
                         }

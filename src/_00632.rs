@@ -5,7 +5,7 @@ impl Solution {
     pub fn smallest_range(nums: Vec<Vec<i32>>) -> Vec<i32> {
         let mut range_left = 0;
         let mut range_right = i32::MAX;
-        let mut min_range = range_right - range_left;
+        let min_range = range_right - range_left;
 
         let mut max_value = i32::MIN;
         let size = nums.len();

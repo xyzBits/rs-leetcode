@@ -10,7 +10,7 @@ impl Solution {
         let locked_bytes = locked.as_bytes();
         for i in 0..n {
             if locked_bytes[i] == b'(' {
-                let mut diff;
+                let diff;
                 if s_bytes[i] == b'(' {
                     diff = 1;
                 } else {

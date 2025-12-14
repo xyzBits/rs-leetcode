@@ -34,11 +34,16 @@ impl Solution {
 
         let mut ans = vec![0; n];
         let (mut s, mut i, mut j) = (0, 0, 0);
-        while j >= 0 {
+        while j != !0 {
+            // !0 is usize::MAX, equivalent to -1 as usize
             ans[i] = j as i32;
             i += 1;
             s |= 1 << (j as i32);
-            j = g[s as usize][j] as usize;
+            let next_val = g[s as usize][j];
+            if next_val == -1 {
+                break;
+            }
+            j = next_val as usize;
         }
 
         ans

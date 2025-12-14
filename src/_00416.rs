@@ -7,8 +7,8 @@ impl Solution {
             return false;
         }
 
-        let mut sum = nums.iter().sum::<i32>();
-        let mut max_num = *nums.iter().max().unwrap();
+        let sum = nums.iter().sum::<i32>();
+        let max_num = *nums.iter().max().unwrap();
 
         if sum % 2 != 0 {
             return false;

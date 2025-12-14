@@ -22,7 +22,7 @@ fn change(s: &mut String) {
 }
 
 // 变量 s 本身指向的数据也可以变
-fn change_v2(mut s: &mut String) {
+fn change_v2(s: &mut String) {
     s.push_str(" World");
 }
 

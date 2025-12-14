@@ -28,11 +28,11 @@ impl Solution {
             return res;
         }
 
-        let mut i = len - 1;
+        let mut i = (len - 1) as isize;
         while i >= 0 && max_size > 0 {
-            if dp[i] == max_size && max_val % nums[i] == 0 {
-                res.push(nums[i]);
-                max_val = nums[i];
+            if dp[i as usize] == max_size && max_val % nums[i as usize] == 0 {
+                res.push(nums[i as usize]);
+                max_val = nums[i as usize];
                 max_size -= 1;
             }
             i -= 1;

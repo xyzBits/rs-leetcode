@@ -96,7 +96,7 @@ impl<T> LinkedList<T> {
         })
     }
 
-    pub fn peek_back(&self) -> Option<Ref<T>> {
+    pub fn peek_back(&self) -> Option<Ref<'_, T>> {
         self.tail.as_ref().map(|node| {
             // 由于 node.borrow() 返回的是 Ref<Node<T>
             // 如果 peek_back 直接返回 Ref<Node<T>>，则把内部的细节 Node 类型

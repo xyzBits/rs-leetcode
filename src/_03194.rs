@@ -1,7 +1,7 @@
 use crate::Solution;
 
 impl Solution {
-    pub fn minimum_average(mut nums: &mut Vec<i32>) -> f64 {
+    pub fn minimum_average(nums: &mut Vec<i32>) -> f64 {
         nums.sort();
 
         let len = nums.len();

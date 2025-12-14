@@ -8,7 +8,7 @@ impl Solution {
         for i in 0..n {
             for j in i + 1..n {
                 for k in j + 1..n {
-                    res = res.max(((nums[i] - nums[j]) as i64 * nums[k] as i64))
+                    res = res.max((nums[i] - nums[j]) as i64 * nums[k] as i64)
                 }
             }
         }

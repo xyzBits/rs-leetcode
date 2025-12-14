@@ -4,7 +4,7 @@ impl Solution {
     pub fn search_insert(nums: Vec<i32>, target: i32) -> i32 {
         let n = nums.len();
 
-        let (mut left, mut right, mut ans) = (0, n - 1, n);
+        let (mut left, mut right, ans) = (0, n - 1, n);
         while left <= right {
             let mid = left + (right - left) / 2;
             if nums[mid] == target {

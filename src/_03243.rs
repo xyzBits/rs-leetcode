@@ -6,15 +6,14 @@ impl Solution {
 
         let mut dp = vec![0; n as usize];
         for i in 1..n as usize {
-            &prev.get_mut(i).unwrap().push(i as i32 - 1);
+            prev.get_mut(i).unwrap().push(i as i32 - 1);
             dp[i] = i as i32;
         }
 
         let mut ans = vec![0; queries.len()];
 
         for i in 0..queries.len() {
-            &prev
-                .get_mut(queries[i][1] as usize)
+            prev.get_mut(queries[i][1] as usize)
                 .unwrap()
                 .push(queries[i][0]);
             for v in queries[i][1]..n {

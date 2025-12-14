@@ -1,7 +1,6 @@
+use std::cell::RefCell;
 use crate::Solution;
-use std::cell::{Cell, RefCell};
 use std::collections::HashMap;
-use std::rc::Rc;
 
 impl Solution {
     pub fn find_lhs(nums: Vec<i32>) -> i32 {
@@ -101,6 +100,8 @@ fn test_003() {
 
 #[test]
 fn test_004() {
+    use std::rc::Rc;
+
     let data = Rc::new(vec!['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']);
     let size = (&data).len();
     println!("{}", size);

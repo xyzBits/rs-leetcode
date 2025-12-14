@@ -34,6 +34,7 @@ impl Mat {
 }
 
 /* 单位矩阵 */
+#[allow(non_snake_case)]
 fn I() -> Mat {
     let mut m = Mat::new();
     for i in 0..L {
@@ -59,14 +60,14 @@ fn quickmul(x: &Mat, mut y: i32) -> Mat {
 
 impl Solution {
     pub fn length_after_transformations(s: String, t: i32, nums: Vec<i32>) -> i32 {
-        let mut T = Mat::new();
+        let mut t_mat = Mat::new();
         for i in 0..L {
             for j in 1..=nums[i] as usize {
-                T.a[(i + j) % L][i] = 1;
+                t_mat.a[(i + j) % L][i] = 1;
             }
         }
 
-        let res = quickmul(&T, t);
+        let res = quickmul(&t_mat, t);
         let mut f = [0; L];
         for ch in s.chars() {
             f[(ch as u8 - b'a') as usize] += 1;

@@ -26,7 +26,7 @@ impl Solution {
                         for dir in &DIRS {
                             let ni = i + dir[0] as usize;
                             let nj = j + dir[1] as usize;
-                            if ni >= 0 && ni < n && nj >= 0 && nj < n {
+                            if ni < n && nj < n {
                                 dp[step][i][j] += dp[step - 1][ni][nj] / 8.0;
                             }
                         }
