@@ -1,5 +1,5 @@
-use std::cell::RefCell;
 use crate::Solution;
+use std::cell::RefCell;
 use std::collections::HashMap;
 
 impl Solution {

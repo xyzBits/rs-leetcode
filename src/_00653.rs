@@ -83,7 +83,6 @@ fn test_001() {
 
 #[test]
 fn test_002() {
-
     let value = Rc::new(10);
 
     // std::thread::spawn(move || {
